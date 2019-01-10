@@ -5,7 +5,7 @@ import textwrap
 class Product(models.Model):
 	title = models.CharField(max_length=200)
 	url = models.TextField()
-	pub_date = models.DateTimeField(auto_now_add=True)
+	pub_date = models.DateTimeField()
 	votes_total = models.BigIntegerField(default=0)
 	image = models.ImageField(upload_to='images/%Y/%m/%d/')
 	icon = models.ImageField(upload_to='icons/%Y/%m/%d/')
