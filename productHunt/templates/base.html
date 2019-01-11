@@ -18,6 +18,7 @@
     <!-- Custom styles for this template -->
     <link href="sticky-footer-navbar.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'sticky-footer-navbar.css' %}">
+    <link href="{% static 'open-iconic/font/css/open-iconic-bootstrap.css'%}" rel="stylesheet">
   </head>
 
   <body>
@@ -33,6 +34,9 @@
           <ul class="navbar-nav ml-auto">
             {% if user.is_authenticated %}
             <li class="nav-item">
+              <a class="nav-link" href="{% url 'create' %}"><span class="oi oi-plus"></span></a>
+            </li>
+            <li class="nav-item">             
               <a class="nav-link" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
               <form method="POST" action="{% url 'logout' %}" id="logout">
                 {% csrf_token %}
